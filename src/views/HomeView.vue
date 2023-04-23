@@ -88,10 +88,10 @@ h2 {
 .browse {
   position: relative;
   right: 2rem;
-  top: 15rem;
+  top: 18rem;
   background-color: rgba(0, 0, 0, 0.2);
   border: 2px solid #48768A;
-  border-radius: 13px;
+  border-radius: 5px;
   padding: 10px;
   box-shadow: 0 0px 9px black;
   font-weight: bold;

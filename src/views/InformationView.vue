@@ -83,7 +83,7 @@ export default {
 
 .search-bar {
   position: relative;
-  right: 4.5rem;
+  right: 7rem;
   top: 1.5rem;
   color: white;
 
@@ -112,7 +112,7 @@ input [type=search] {
 .articles h1 {
   position: relative;
   top: 1.6rem;
-  left: 25rem;
+  left: 23rem;
   
   width: 31rem;
   padding-inline: 3rem;
