@@ -8,16 +8,16 @@
     
 </form>
   <br>
-<div v-if="articles.length = 4" class="news-cards">
+<div v-if="articles.length = 6" class="news-cards">
   <div  class="row container-fluid">
     
-      <div class="card col-5" v-for="article in filtered"
+      <div class="card col-3" v-for="article in filtered"
         :key="article.id">
+        
         <div class="header"></div>
         <h4 class="name">{{ article.title }}</h4>
         <img :src = "article.urlToImage">
         
-        <p class="description">{{ article.description}}</p>
       <div class="published"> {{ article.publishedAt }}</div>
        <br> 
       <p class="content">{{ article.content}}</p>
@@ -45,9 +45,6 @@ export default {
       articles: []
     }
   },
-  methods: {
-
-  },
   
   setup() {
     const store = useStore();
@@ -62,7 +59,7 @@ export default {
 
     filtered: function(){
       return this.articles.filter((article) => {
-        return article.content.match(this.searchQuery)
+        return article.content.toLowerCase().match(this.searchQuery.toLowerCase())
       });
     }
   }
@@ -105,6 +102,7 @@ input [type=search] {
   padding: 10px;
   margin: 20px;
   margin-left: 5rem;
+  /* height: 53rem; */
 }
 
 .card:hover {
@@ -148,7 +146,7 @@ input [type=search] {
   background-repeat:repeat;
   background-size: cover;
   background-position: center;
-  height: 310vh;
+  height: 270vh;
   object-fit: cover;
   position: relative;
   top: 8rem;

@@ -30,7 +30,6 @@ export default {
 
 nav {
   position: relative;
-  
   padding: 40px;
   background-color: #48768A;
   border-bottom: 0px solid darkslategrey;

@@ -4,11 +4,11 @@
     <h2>Get the most current news stories and information here</h2>
      
     <RouterLink :to= "{name: 'information'}">
-    <button class="more">Browse Stories</button>
+    <button class="browse">Browse Stories</button>
   </RouterLink>
   </div>
   
-  <div v-if="articles.length = 8" class="news-cards">
+  <div v-if="articles.length = 3" class="news-cards">
    <h2>Top stories</h2>
   <div class="row container-fluid">
     
@@ -19,6 +19,7 @@
         <img :src = "article.urlToImage">
         
         <p class="description">{{ article.description}}</p>
+        <a :href= "article.url"><p class="more">See more</p></a>
       <div class="published"> {{ article.publishedAt }}</div>
         <p class="author">Authored by: {{ article.author}}</p>
         
@@ -43,6 +44,7 @@ export default {
       articles,
     };
   },
+  
 };
 </script>
 
@@ -72,7 +74,6 @@ h1 {
 }
 
 h2, h1 {
-  
   font-weight:lighter;
 }
 
@@ -84,30 +85,30 @@ h2 {
   color: white;
 }
 
-.more {
+.browse {
   position: relative;
   right: 2rem;
   top: 15rem;
-  background-color: #48768A;
-  border: 0px solid grey;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 2px solid #48768A;
   border-radius: 13px;
   padding: 10px;
-  box-shadow: 0 0px 10px black;
+  box-shadow: 0 0px 9px black;
   font-weight: bold;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.more:hover {
+.browse:hover {
   color: white;
-  box-shadow: 0 0px 0px black;
-  background-color: darkslategrey;
+  box-shadow: 0 0px 2px black;
+  background-color:#48768A;
 }
 
 .card {
-  margin-left: 11.2px;
+  margin-left: 25px;
   margin-top: 11px;
   margin-bottom: 11px;
-  width: 20rem;
+  width: 26rem;
   box-shadow: 0 0px 4px black;
   background-color: #ffffffd7;
 }
@@ -116,6 +117,11 @@ h2 {
   font-size: 12px;
   position:relative;
   top: 1rem;
+}
+
+.description {
+  
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
 }
 
 .news-cards h2 {
@@ -133,6 +139,22 @@ h2 {
   margin-bottom: -2rem;
   top: 3rem;
   background-color: #74919b;
+}
+
+.more {
+  border: 0px solid grey;
+  color: darkslategrey;
+  border-radius: 15px;
+  background-color: rgba(455, 455, 455, 0.5);
+  padding: 9px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.more:hover {
+  background-color: #48768A;
+  color: white;
+  border: 2px solid grey;
+  box-shadow: 0px 0px 5px 0px black;
 }
 
 </style>
