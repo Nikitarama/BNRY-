@@ -1,36 +1,19 @@
 <template>
-  
-  <NavbarComp/>
-  
-<router-view/>
-<FooterComp/>
+     <nav>
+      
+    <router-link to="/">Home |</router-link> <br>
+    <router-link to="/information">Information</router-link> 
+  </nav>
+ 
+  <router-view/>
+
 </template>
 
-<script>
-import NavbarComp from './components/NavbarComp.vue';
-import FooterComp from './components/FooterComp.vue';
-
-export default {
-  components: {
-    NavbarComp, 
-    FooterComp
-  }
-}
-
-</script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #030405;
-}
-
+<style scoped>
 nav {
-  position: relative;
-  
+  position: fixed;
+  z-index: 2;
+  width: 100%;
   padding: 40px;
   background-color: #48768A;
   border-bottom: 0px solid darkslategrey;
@@ -38,6 +21,11 @@ nav {
   text-align: left;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
 nav a {
   left: 33.5rem;
   position: relative;
@@ -53,4 +41,5 @@ nav a {
 nav a.router-link-exact-active {
   color: white;
 }
+
 </style>

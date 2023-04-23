@@ -1,5 +1,10 @@
 # bnry-assessment
+```
+- Navbar & "Browse Stories" button takes the viewer to the next [Information] page. 
 
+- You can search for a particular story by typing it into the search bar. 
+
+```
 ## Project setup
 ```
 npm install

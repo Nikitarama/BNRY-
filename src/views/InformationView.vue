@@ -1,45 +1,17 @@
 <template>
   <div class="articles">
-    <h1>Get the latest news</h1>
-
-    <!-- <table class="table table-striped table-dark table-hover">
-      <thead>
-    <tr>
-   
-      <th scope="col">Author</th>
-      <th scope="col">Title</th>
-      <th scope="col">Description</th>
-      <th scope="col">URL</th>
-      <th scope="col">Image</th>
-      <th scope="col">Published</th>
-      <th scope="col">Content</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr v-for="article in articles" :key="article.id">
-      <th scope="row"></th>
-     
-      <td>{{ article.author}}</td>
-      <td>{{ article.title}}</td>
-      <td>{{ article.description}}</td>
-      <td>{{ article.url}}</td>
-      <td><img :src= "article.urlToImage"></td>
-      <td>{{ article.publishedAt}}</td>
-      <td>{{ article.content}}</td>
-    </tr>
-    
-  </tbody>
-</table> -->
+    <h1>Search for the Top news stories</h1>
 <br>
-<div class="search-bar">
+<form @submit.prevent class="search-bar">
     <label for="search">Search articles</label>
-    <input type="search" id="search">
-  </div>
-  <br>
-<div class="news-cards">
-  <div class="row container-fluid">
+    <input type="text" v-model="searchQuery" id="search">
     
-      <div class="card col-5" v-for="article in articles"
+</form>
+  <br>
+<div v-if="articles.length = 4" class="news-cards">
+  <div  class="row container-fluid">
+    
+      <div class="card col-5" v-for="article in filtered"
         :key="article.id">
         <div class="header"></div>
         <h4 class="name">{{ article.title }}</h4>
@@ -58,25 +30,6 @@
       
   </div>
   </div>
-
-        <!-- <h2>Articles:</h2> -->
-          <!-- <div class="carousel" v-for= "article in articles" :key="article.id">
-            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" >
-                <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="2000">
-                    <img :src= "article.urlToImage" style="height: 300px; width: 100px;" class="d-block rounded mx-auto d-block w-75" alt="CapeTown">
-                  </div> -->
-                  <!-- <div class="carousel-item" data-bs-interval="2000">
-                    <img src="https://i.postimg.cc/QMFcdkdv/t30earlyarisakas.jpg" style="height: 300px;" class="d-block rounded mx-auto d-block w-75" alt="...">
-                  </div>
-                  <div class="carousel-item" data-bs-interval="2000">
-                    <img src="https://i.postimg.cc/HLt1j5v4/61v-JFg5wuq-L-AC-UF1000-1000-QL80.jpg" style="height: 300px;" class="d-block rounded mx-auto d-block w-75" alt="...">
-                  </div> -->
-<!--                   
-            </div>-->
-          <!-- </div>
-
-        </div> -->
   </div>
 </template>
 
@@ -85,6 +38,17 @@ import { computed } from "@vue/runtime-core";
 import { useStore } from "vuex";
 
 export default {
+  
+  data() {
+    return {
+      searchQuery: '',
+      articles: []
+    }
+  },
+  methods: {
+
+  },
+  
   setup() {
     const store = useStore();
     store.dispatch("fetchArticles");
@@ -93,6 +57,15 @@ export default {
       articles,
     };
   },
+  
+  computed: {
+
+    filtered: function(){
+      return this.articles.filter((article) => {
+        return article.content.match(this.searchQuery)
+      });
+    }
+  }
 };
 
 
@@ -102,59 +75,86 @@ export default {
 
 #search {
   position: relative;
-  border-radius: 10px;
+  border-radius: 40px;
   width: 40rem;
-  border: 2px solid grey;
+  border: 3px solid grey;
+  color: white;
+  margin-left: 1rem;
+  padding: 5px;
+  background-color: rgba(109, 109, 109, 0.486);
+}
+
+.search-bar {
+  position: relative;
+  right: 4.5rem;
+  top: 1.5rem;
+  color: white;
+
 }
 
 input [type=search] {
   position: relative;
-  left: 23rem;
+  left: 21rem;
   bottom: 4rem;
+  
 }
 
 .card {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0px 0px 10px black;
   padding: 10px;
   margin: 20px;
   margin-left: 5rem;
 }
 
+.card:hover {
+  box-shadow: 0 0px 4px black;
+}
+
 .articles h1 {
- 
+  position: relative;
+  top: 1.6rem;
+  left: 25rem;
+  
+  width: 31rem;
+  padding-inline: 3rem;
   color: white;
-  margin-top: 40px;
-  box-shadow: 0px 0px 10px black;
+  -webkit-text-stroke-width: 0.001cm;
   font-size: 40px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  border: 1px solid darkgrey;
-  background-color: darkslategray;
+  font-family: 'Hepta Slab', serif;
+  
+  text-align: left;
 }
 
 .more {
-  background-color: darkslategray;
-  color: white;
-  border-radius: 20px;
-  border: 1px solid grey;
-  padding: 5px;
+  
+  border: 0px solid grey;
+  color: darkslategrey;
+  border-radius: 15px;
+  background-color: rgba(455, 455, 455, 0.5);
+  padding: 9px;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .more:hover {
-  background-color: white;
-  color: darkslategrey;
-  border: 1px solid grey;
+  background-color: #48768A;
+  color: white;
+  border: 0px solid grey;
+  box-shadow: 0px 0px 100px 0px black;
 }
 
 .articles {
-  /* background-image: url(https://i.postimg.cc/SxCnmssX/filip-mishevski-c5-Qd-Mcu-Flg-Y-unsplash.jpg); */
-  background-repeat: no-repeat;
+  background-image: url(https://i.postimg.cc/Cx0X9ZHV/6b50bdfe3efb25aca023a72834f01c16.jpg);
+  background-repeat:repeat;
   background-size: cover;
-  
+  background-position: center;
+  height: 310vh;
+  object-fit: cover;
+  position: relative;
+  top: 8rem;
 }
 .name {
-  border-bottom: 1px solid lightgrey;
+  border-bottom: 0px solid lightgrey;
   font-family:Georgia, 'Times New Roman', Times, serif;
   font-weight: bold;
 }
@@ -178,5 +178,10 @@ input [type=search] {
 
 .description{
   font-size: 12px;
+}
+
+.news-cards {
+  position:relative;
+  right: 3rem;
 }
 </style>
