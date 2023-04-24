@@ -1,4 +1,4 @@
- //API Setup
+ //Packages Setup
 const express = require('express');
 
 const path = require('path');
@@ -9,6 +9,7 @@ const app = express();
 
 const cors = require('cors');
 
+//API Setup
 const NewsAPI = require('newsapi');
 const newsapi = new NewsAPI('aed654939b3540588c898f58df96e6c3');
 
