@@ -19,7 +19,7 @@
         <img :src = "article.urlToImage">
         
         <p class="description">{{ article.description}}</p>
-        <a :href= "article.url"><p class="more">See more</p></a>
+        <!-- <a :href= "article.url"><p class="more">See more</p></a> -->
       <div class="published"> {{ article.publishedAt }}</div>
         <p class="author">Authored by: {{ article.author}}</p>
         
@@ -67,14 +67,20 @@ h1 {
   font-weight: 700;
   border-bottom: 2px solid white;
   width: 50rem;
-  left: 17rem;
+  left: 19rem;
   margin-bottom: 30px;
   top: 15rem;
   font-family: 'Hepta Slab', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #030405;
 }
 
 h2, h1 {
   font-weight:lighter;
+  text-align: center;
+  color: #030405;
 }
 
 h2 {
@@ -87,15 +93,16 @@ h2 {
 
 .browse {
   position: relative;
-  right: 2rem;
+  left: 39rem;
   top: 18rem;
   background-color: rgba(0, 0, 0, 0.2);
-  border: 2px solid #48768A;
+  border: 3px solid #48768A;
   border-radius: 5px;
   padding: 10px;
   box-shadow: 0 0px 9px black;
   font-weight: bold;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  
 }
 
 .browse:hover {
@@ -105,7 +112,7 @@ h2 {
 }
 
 .card {
-  margin-left: 25px;
+  margin-left: 3.3rem;
   margin-top: 11px;
   margin-bottom: 11px;
   width: 26rem;
@@ -133,6 +140,7 @@ h2 {
 
 .news-cards {
   position: relative;
+  
   z-index: -1;
   padding-top: 4rem;
   padding-bottom: 5rem;
@@ -147,10 +155,11 @@ h2 {
   border-radius: 15px;
   background-color: rgba(455, 455, 455, 0.5);
   padding: 9px;
+  text-align: center;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.more:hover {
+.card .more:hover {
   background-color: #48768A;
   color: white;
   border: 2px solid grey;

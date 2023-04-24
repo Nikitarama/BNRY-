@@ -19,13 +19,14 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #030405;
+  
 }
 
 nav {
@@ -38,8 +39,8 @@ nav {
 }
 
 nav a {
-  left: 33.5rem;
   position: relative;
+  left: 37rem;
   font-weight: 500;
   font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: #091624;
