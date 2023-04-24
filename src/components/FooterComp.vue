@@ -147,4 +147,10 @@ form .g-inp{
     padding: 4px;
 }
 
+@media only screen and (max-width: 1080px){
+  .f-item-con {
+    width: 57.5rem;
+  }
+}
+
 </style>

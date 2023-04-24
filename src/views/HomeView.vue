@@ -9,18 +9,18 @@
   </div>
   
   <div v-if="articles.length = 3" class="news-cards">
-   <h2>Top stories</h2>
-  <div class="row container-fluid">
+    <div class="row container-fluid">
+    <h2>Top stories</h2>
     
       <div class="card col-3" v-for="article in articles"
         :key="article.id">
-        <div class="header"></div>
         <h5 class="name">{{ article.title }}</h5>
+        
         <img :src = "article.urlToImage">
         
         <p class="description">{{ article.description}}</p>
-        <!-- <a :href= "article.url"><p class="more">See more</p></a> -->
-      <div class="published"> {{ article.publishedAt }}</div>
+        
+        <div class="published"> {{ article.publishedAt }}</div>
         <p class="author">Authored by: {{ article.author}}</p>
         
         
@@ -61,13 +61,13 @@ export default {
   height: 100vh;
 }
 
-h1 {
+.articles h1 {
   position: relative;
   font-size: 70px;
-  font-weight: 700;
+  font-weight: 400;
   border-bottom: 2px solid white;
   width: 50rem;
-  left: 19rem;
+  left: 17rem;
   margin-bottom: 30px;
   top: 15rem;
   font-family: 'Hepta Slab', serif;
@@ -77,7 +77,7 @@ h1 {
   color: #030405;
 }
 
-h2, h1 {
+ h2, h1 {
   font-weight:lighter;
   text-align: center;
   color: #030405;
@@ -91,9 +91,15 @@ h2 {
   color: white;
 }
 
+.row h2 {
+  
+  margin-left: 3rem;
+  
+}
+
 .browse {
   position: relative;
-  left: 39rem;
+  left: 37.5rem;
   top: 18rem;
   background-color: rgba(0, 0, 0, 0.2);
   border: 3px solid #48768A;
@@ -112,7 +118,7 @@ h2 {
 }
 
 .card {
-  margin-left: 3.3rem;
+  margin-left: 1.5rem;
   margin-top: 11px;
   margin-bottom: 11px;
   width: 26rem;
@@ -140,30 +146,49 @@ h2 {
 
 .news-cards {
   position: relative;
-  
+  text-align: center;
   z-index: -1;
-  padding-top: 4rem;
+  padding-top: 3rem;
   padding-bottom: 5rem;
   margin-bottom: -2rem;
   top: 3rem;
   background-color: #74919b;
 }
 
-.more {
-  border: 0px solid grey;
-  color: darkslategrey;
-  border-radius: 15px;
-  background-color: rgba(455, 455, 455, 0.5);
-  padding: 9px;
-  text-align: center;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+@media only screen and (max-width: 1080px) {
+  .news-cards {
+    position: relative;
+    right: 10rem;
+    width: 100%;
+    background-size: contain;
+  }
+  .row h1 {
+    position: relative;
+    left: 20rem;
+  }
+  
+  .card {
+    position: relative;
+    left: 10rem;
+    width: 17rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .articles {
+    width: 57.5rem;
+  }
+  .articles h2 {
+    width: 40rem;
+    position: relative;
+    left: 20rem;
+  }
+  .articles h1 {
+    position: relative;
+    right: 20rem;
+  }
 }
 
-.card .more:hover {
-  background-color: #48768A;
-  color: white;
-  border: 2px solid grey;
-  box-shadow: 0px 0px 5px 0px black;
-}
+
 
 </style>

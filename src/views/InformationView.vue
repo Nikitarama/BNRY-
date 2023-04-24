@@ -1,17 +1,17 @@
 <template>
-  <div class="art">
+  
     <div class="articles">
-      <div class="headline">
-        <h1>Search for the Top news stories</h1>
+      
+        <h1 class="head">Search for the Top news stories</h1>
 
         <!-- <br /> -->
         <form @submit.prevent class="search-bar">
-          <label for="search">Search articles</label>
+          <label for="search" class="label">Search articles</label>
           <input type="text" v-model="searchQuery" id="search" />
         </form>
-      </div>
+      
       <!-- <br /> -->
-      <div class="car">
+      <div class="cards">
         <div v-if="(articles.length = 6)" class="news-cards">
           <div class="row container-fluid">
             <div
@@ -33,7 +33,7 @@
         </div>
       </div>
     </div>
-  </div>
+  
 </template>
 
 <script>
@@ -70,16 +70,12 @@ export default {
 </script>
 
 <style scoped>
-.headline h1 {
-  margin-bottom: 3rem;
-}
-.headline {
-  margin-bottom: 3rem;
-}
+
 
 #search {
   position: relative;
   border-radius: 40px;
+  margin-bottom: 3rem;
   width: 40rem;
   border: 3px solid grey;
   color: white;
@@ -117,9 +113,9 @@ input [type="search"] {
 
 .articles h1 {
   position: relative;
-  top: 1.6rem;
-  left: 23rem;
-
+  top: 3rem;
+  left: 25rem;
+  margin-bottom: 3rem;
   width: 31rem;
   padding-inline: 3rem;
   color: white;
@@ -178,10 +174,6 @@ input [type="search"] {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.news-cards {
-  position: relative;
-  right: 3rem;
-}
 
 @media only screen and (max-width: 1080px) {
   .news-cards {
@@ -191,9 +183,16 @@ input [type="search"] {
     background-size: contain;
   }
   .card {
+    position: relative;
+    right: 17rem;
     width: 20rem;
     display: flex;
     justify-content: center;
+  }
+  .articles {
+    height: 340vh;
+    position: relative;
+    right: 10rem;
   }
   .search-bar {
     position: relative;
@@ -201,85 +200,4 @@ input [type="search"] {
   }
 }
 
-@media only screen and (max-width: 650px) {
-  .news-cards {
-    display: flex;
-    justify-content: center;
-    /* position: relative; */
-    /* right: 90rem; */
-    width: 100%;
-    background-size: contain;
-    background-color: black;
-  }
-  .card {
-    width: 20rem;
-  }
-  .search-bar {
-    position: relative;
-    /* right: 20rem; */
-  }
-  .articles {
-    max-width: 100%;
-    display: inline-block;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .art{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .headline {
-    display: inline-block;
-    justify-content: center;
-    align-items: center;
-    width: 15px;
-    max-width: 100%;
-    /* color: black; */
-  }
-
-  .car {
-    width: 20rem;
-    display: flex;
-    justify-content: center;
-  }
-
-  .headline h1 {
-    color: black;
-  }
-
-  .row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-@media screen and (max-width: 370px) {
-  /* body {
-    width: 30rem;
-  } */
-  /* nav {
-    width: 30rem;
-  } */
-  .articles {
-    display: flex;
-    justify-items: center;
-    align-items: center;
-    /* position: relative; */
-    /* left: 30rem; */
-    width: 100%;
-    background-size: cover;
-    height: 100vh;
-  }
-  .card {
-    width: 20rem;
-  }
-  .search-bar {
-    position: relative;
-    right: 20rem;
-  }
-}
 </style>

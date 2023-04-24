@@ -22,7 +22,7 @@ nav {
 }
 
 nav a {
-  left: 37rem;
+  left: 35rem;
   position: relative;
   font-weight: 500;
   font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -35,6 +35,13 @@ nav a {
 
 nav a.router-link-exact-active {
   color: white;
+}
+
+@media only screen and (max-width: 1080px){
+  nav {
+    width: 57.5rem;
+  }
+
 }
 
 </style>
