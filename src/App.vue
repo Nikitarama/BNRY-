@@ -26,31 +26,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #030405;
-  
 }
 
-nav {
-  position: relative;
-  padding: 40px;
-  background-color: #48768A;
-  border-bottom: 0px solid darkslategrey;
-  box-shadow: 0 0px 10px black;
-  text-align: left;
-}
-
-nav a {
-  position: relative;
-  left: 37rem;
-  font-weight: 500;
-  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: #091624;
-  text-decoration: none;
-  font-size: 20px;
-  padding: 10px;
-  
-}
-
-nav a.router-link-exact-active {
-  color: white;
-}
 </style>

@@ -4,13 +4,11 @@
       
         <h1 class="head">Search for the Top news stories</h1>
 
-        <!-- <br /> -->
         <form @submit.prevent class="search-bar">
           <label for="search" class="label">Search articles</label>
           <input type="text" v-model="searchQuery" id="search" />
         </form>
-      
-      <!-- <br /> -->
+    
       <div class="cards">
         <div v-if="(articles.length = 6)" class="news-cards">
           <div class="row container-fluid">
@@ -71,7 +69,6 @@ export default {
 
 <style scoped>
 
-
 #search {
   position: relative;
   border-radius: 40px;
@@ -83,7 +80,6 @@ export default {
   padding: 5px;
   background-color: rgba(109, 109, 109, 0.486);
 }
-
 .search-bar {
   position: relative;
   left: 14rem;
@@ -96,7 +92,6 @@ input [type="search"] {
   left: 21rem;
   bottom: 4rem;
 }
-
 .card {
   background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0px 0px 10px black;
@@ -104,13 +99,10 @@ input [type="search"] {
   margin: 20px;
   margin-left: 5rem;
   text-align: center;
-  /* height: 53rem; */
 }
-
 .card:hover {
   box-shadow: 0 0px 4px black;
 }
-
 .articles h1 {
   position: relative;
   top: 3rem;
@@ -122,7 +114,6 @@ input [type="search"] {
   -webkit-text-stroke-width: 0.001cm;
   font-size: 40px;
   font-family: "Hepta Slab", serif;
-
   text-align: left;
 }
 
@@ -134,14 +125,12 @@ input [type="search"] {
   padding: 9px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-
 .more:hover {
   background-color: #48768a;
   color: white;
   border: 0px solid grey;
   box-shadow: 0px 0px 100px 0px black;
 }
-
 .articles {
   background-image: url(https://i.postimg.cc/Cx0X9ZHV/6b50bdfe3efb25aca023a72834f01c16.jpg);
   background-repeat: repeat;
@@ -157,11 +146,9 @@ input [type="search"] {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: bold;
 }
-
 .published {
   font-size: 11px;
 }
-
 .content {
   font-weight: bold;
   font-size: 18px;
@@ -173,7 +160,6 @@ input [type="search"] {
   font-size: 17px;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
-
 
 @media only screen and (max-width: 1080px) {
   .news-cards {

@@ -23,8 +23,6 @@
         <div class="published"> {{ article.publishedAt }}</div>
         <p class="author">Authored by: {{ article.author}}</p>
         
-        
-        
       </div>
       
   </div>
@@ -90,13 +88,9 @@ h2 {
   left: 0rem;
   color: white;
 }
-
 .row h2 {
-  
   margin-left: 3rem;
-  
 }
-
 .browse {
   position: relative;
   left: 37.5rem;
@@ -133,7 +127,6 @@ h2 {
 }
 
 .description {
-  
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
 }
 
@@ -188,7 +181,4 @@ h2 {
     right: 20rem;
   }
 }
-
-
-
 </style>
